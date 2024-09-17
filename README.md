@@ -20,7 +20,6 @@
 |12| ✔️ Check Auth `Endpoint`               |                                     |
 
 
-
 <br/>
 
 
@@ -44,28 +43,26 @@
 [checkAuth]:         ./backend/src/projects/auth/controllers/checkAuth.js
 
 
-
 <br/>
 
 ### To run backend please setup the .env file
 
 ```
-MONGODB_URI = *****
-
-NODE_ENV = development
 CLIENT_URL = *****
+
+MONGODB_URI = *****
 
 JWT_SECRET = *****
 JWT_EXPIRES_IN = *****
 
-MAILTRAP_ENDPOINT = *****
 MAILTRAP_TOKEN = *****
+MAILTRAP_ENDPOINT = *****
 
-MAILTRAP_SENDER_EMAIL = *****
 MAILTRAP_SENDER_NAME = *****
+MAILTRAP_SENDER_EMAIL = *****
 
-MAILTRAP_WELCOME_MAIL_TEMPLATE_UUID = *****
 MAILTRAP_COMPANY_INFO_NAME = *****
+MAILTRAP_WELCOME_MAIL_TEMPLATE_UUID = *****
 ```
 
 <br/>
@@ -88,6 +85,7 @@ cd frontend
 yarn dev
 ```
 
+<br/>
 
 ## NodeJs | Backend Basic Data Flow...
 <img src="./backend/public/img/backendDataFlow.png" />

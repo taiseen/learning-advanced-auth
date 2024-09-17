@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.backgroundStyle {
+    @apply relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-900 via-green-900 to-emerald-900;
+}
+
+
+.container {
+    @apply max-w-md w-full bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-xl rounded-2xl;
+}
+
+
+.inputContainer {
+    @apply container shadow-xl overflow-hidden;
+}
+
+
+.codeInputContainer {
+    @apply container p-8 shadow-2xl;
+}
+
+
+.dashboardContainer {
+    @apply max-w-lg w-full mx-auto mt-10 p-8 bg-gray-900 bg-opacity-80 backdrop-filter backdrop-blur-lg rounded-xl shadow-2xl border border-gray-800;
+}
+
+
+.dashboardElement{
+    @apply p-4 bg-gray-800 bg-opacity-50 rounded-lg border border-gray-700;
+}
+
+
+.inputContainerTitle{
+    @apply text-3xl font-bold mb-6 text-center bg-gradient-to-r from-green-400 to-emerald-500 text-transparent bg-clip-text select-none;
+}
+
+
+.userInput{
+    @apply w-full pl-10 pr-3 py-2 bg-gray-800 bg-opacity-50 rounded-lg border border-gray-700 focus:border-green-500 focus:ring-2 focus:ring-green-500 text-white placeholder-gray-400 transition duration-200;
+}
+
+
+.codeInputBox{
+    @apply w-12 h-12 text-center text-2xl font-bold bg-gray-700 text-white border-2 border-gray-600 rounded-lg focus:border-green-500 focus:outline-none;
+}
+
+
+.btn{
+    @apply w-full py-3 px-4 bg-gradient-to-r from-green-500 to-emerald-600 text-white font-bold rounded-lg shadow-lg hover:from-green-600 hover:to-emerald-700 focus:outline-none focus:ring-2 focus:ring-green-500;
+}
+
+
+.actionBtn{
+    @apply btn mt-5 focus:ring-offset-2 focus:ring-offset-gray-900 transition duration-200;
+}
+
+
+.codeVerificationBtn{
+    @apply btn focus:ring-opacity-50 disabled:opacity-50;
+}
+
+
+.logoutBtn{
+    @apply btn focus:ring-offset-2 focus:ring-offset-gray-900;
+}

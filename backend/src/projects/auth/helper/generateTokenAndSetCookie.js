@@ -31,10 +31,10 @@ const generateTokenAndSetCookie = (res, userId) => {
     res.cookie(config.token.name, token, {
         secure: config.env === "production", // this is for - https || http
         httpOnly: true, // this is not accessible by javascript...
-        sameSite: "strict", // CSRF Attack Protection...
+        sameSite: "lax", // // CSRF Attack Protection...
         maxAge: oneDay * 7, // 7 days...
-        domain: getDomainFromUrl(config.clientUrl), // Adjust for domain
-        path: "/", // Ensure it applies to the entire site
+        // domain: getDomainFromUrl(config.clientUrl), // Adjust for domain
+        // path: "/", // Ensure it applies to the entire site
     });
 
 

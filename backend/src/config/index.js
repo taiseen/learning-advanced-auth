@@ -9,15 +9,14 @@ const config = {
     env: process.env.NODE_ENV,
     port: process.env.PORT || 5000,
     dbURL: process.env.MONGODB_URI,
-    clientUrl: process.env.CLIENT_URL,
+    clientUrl: process.env.NODE_ENV === 'production'
+        ? process.env.CLIENT_URL
+        : 'http://localhost:7000',
 
     token: {
         name: 'token',
         jwtSecret: process.env.JWT_SECRET,
         jwtExpiresIn: process.env.JWT_EXPIRES_IN,
-
-        // refSecret: process.env.REFRESH_JWT_SECRET,
-        // refExpiresIn: process.env.REFRESH_JWT_EXPIRES_IN,
     },
 
     mailTrap: {

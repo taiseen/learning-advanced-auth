@@ -1,9 +1,8 @@
 import authRoutes from "./projects/auth/routes/authRoutes.js";
 import routeNotFound from './utils/routeNotFound.js';
+import cookieParser from "cookie-parser";
 import config from './config/index.js';
 import dbCon from './connection/db.js';
-
-import cookieParser from "cookie-parser";
 import bodyParser from 'body-parser';
 import express from 'express';
 import cors from 'cors';
@@ -13,9 +12,6 @@ const app = express();
 const publicDir = 'public';
 
 
-// app.use(cors());
-app.use(cors({ origin: config.clientUrl, credentials: true }));
-
 app.use(express.json()); // allows us to parse incoming requests:req.body into json...
 app.use(cookieParser()); // allows us to parse incoming cookies...
 
@@ -23,11 +19,12 @@ app.use(express.static(publicDir)); // Serve static files from the 'public' dire
 app.use(bodyParser.json({ limit: '30mb', extended: true })); // client side body data processing
 app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }));
 
+app.use(cors({ origin: config.clientUrl, credentials: true }));
+
 
 
 
 app.use('/api/auth', authRoutes);
-
 
 
 

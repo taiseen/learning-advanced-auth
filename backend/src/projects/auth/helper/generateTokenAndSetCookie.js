@@ -3,6 +3,17 @@ import config from "../../../config/index.js";
 import jwt from "jsonwebtoken";
 
 
+const getDomainFromUrl = (url) => {
+    try {
+        const parsedUrl = new URL(url);
+        return parsedUrl.hostname;
+    } catch (error) {
+        console.error('Invalid URL', error);
+        return '';
+    }
+}
+
+
 const generateTokenAndSetCookie = (res, userId) => {
 
     const oneDay = expireTimeHour(24);
@@ -22,6 +33,8 @@ const generateTokenAndSetCookie = (res, userId) => {
         httpOnly: true, // this is not accessible by javascript...
         sameSite: "strict", // CSRF Attack Protection...
         maxAge: oneDay * 7, // 7 days...
+        domain: getDomainFromUrl(config.clientUrl), // Adjust for domain
+        path: "/", // Ensure it applies to the entire site
     });
 
 

@@ -45,7 +45,7 @@
 
 <br/>
 
-### To run backend please setup the .env file
+## To run backend please setup the .env file
 
 ```
 CLIENT_URL = *****
@@ -67,7 +67,7 @@ MAILTRAP_WELCOME_MAIL_TEMPLATE_UUID = *****
 
 <br/>
 
-### Backend run in local:-
+## Backend run in local:-
 
 ```
 cd backend
@@ -76,7 +76,7 @@ cd backend
 yarn dev
 ```
 
-### Frontend run in local:-
+## Frontend run in local:-
 
 ```
 cd frontend
